@@ -1,0 +1,5 @@
+path模块： 官方api，满足对 路径 的处理
+
+例子：
+path.join() 拼接完整路径
+path.basename() 将路径字符串的文件名解析出来
