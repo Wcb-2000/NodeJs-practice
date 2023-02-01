@@ -2,8 +2,11 @@
  * Author: 吴楚标
  * Date: 2023-01-29 00:37:34
  * LastEditors: 吴楚标
- * LastEditTime: 2023-01-29 23:19:37
+ * LastEditTime: 2023-02-02 00:07:42
  * Description: 
+ * 注意点：
+ * 1. fs.writeFile() 方法只能创建文件，不能创建路径，例如test文件夹得先创建
+ * 2. fs.writeFile() 新写入的内容会覆盖旧内容
 */
 // 解析文件 并 分别写入新文件中
 // 将html文件不太组成拆解

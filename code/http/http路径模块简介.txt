@@ -1,0 +1,5 @@
+http模块：
+
+node官方模块，以创建web服务器
+
+const http = require('http)
