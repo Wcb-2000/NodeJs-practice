@@ -1,0 +1,27 @@
+优势：
+1.已操作
+2.可维护
+
+分类：
+1.内置模块（nodejs官方内置api，例：fs、path、http等）
+2.自定义模块（用户创建的每个js文件）
+3.第三方模块（第三方插件等非官方的内置模块，也不是用户自主创建的，需要下载）
+
+加载模块(路径格式不同)：
+内置： const fs = require('fs')
+自定义： const a = require('./a')   （文件后缀可省略 .js）
+第三方： const dayjs = require('dayjs')
+
+模块作用域：
+定义的变量常量只能在当前模块文件内使用，隔离
+
+向外共享内容 module :
+console.log(module)
+module.exports = {}
+注：永远以 module.exports 指向的对象为准
+
+exports对象：
+exports 不能直接赋予对象
+exports === module.exports
+
+module.exports 和 exports  不建议使用在同以模块中
