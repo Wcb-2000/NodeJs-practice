@@ -1,0 +1,22 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2023-02-13 23:43:58
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2023-02-14 00:17:53
+ * @Description: 
+-->
+基于内置模块封装的包；
+提供各类api、工具等
+
+npm网
+www.npmjs.com   搜索包
+registry.npmjs.org  下载包
+
+文件：
+node_modules 包资源
+package-lock.json  版本号等信息
+package.json 配置版本
+
+指定版本 @
+npm i moment@1.0.0
+大版本、功能版本、修复版本
