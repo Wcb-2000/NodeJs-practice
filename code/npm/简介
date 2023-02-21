@@ -45,3 +45,10 @@ i5ting_toc 工具包 实现 md类文档 转成 html 实现在线浏览
 3.package.json 必须包含name包名字，version版本号，main包的入口
 
 
+发布时效：
+npm login
+进入对应目录 npm publish
+
+npm unpublish 只能删除72小时内发布的包， 删除后24小时内不能重复发布
+
+
