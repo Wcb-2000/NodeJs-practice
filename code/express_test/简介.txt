@@ -1,2 +1,5 @@
 node框架之一 express，还有koa
-简介：与内置 http模块类似，其更搞笑创建 web服务器
+简介：与内置 http模块类似，其更高效创建 web服务器
+
+开发工具nodemon(热更新)
+指令：nodemon 文件xxx
