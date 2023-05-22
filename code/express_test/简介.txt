@@ -58,4 +58,33 @@ node框架之一 express，还有koa
   a. cors 中间件（主流推荐）  服务器端配置 仅支持XMLHttpRequest Level的浏览器支持配置
     简介：cors跨域资源共享，由一系列http响应头组成，这些内容决定浏览器是否阻止前端js跨域获取资源
          浏览器同源策略（协议、域名、端口）默认组成跨域获取资源，通过配置cors 消除这一问题
+
+    cors响应头部：
+    Access-Control-Allow-Origin 允许访问该资源的外域url
+    eg: res.setHeader('Access-Control-Allow-Origin', 'http://www.baidu.com')   '*' 允许所有来源
+
+    Access-Control-Allow-Headers 允许的请求头（cors仅支持客户端向服务器发送9种）
+    Accept、Accept-Language、Content-Language、DPR、Downlink、Save-Data、Viewport-Width、Width
+    、Content-Type（包含text/plain、multipart/form-data、application/x-www-form-urlencoded 取三者之一）
+    若出现其他类型，则请求失败，除非在服务器端声明了该类型
+
+    Access-Control-Allow-Method 允许的请求方式 默认get、post、head
+    也可配置请求方式支持其他类型
+    eg: res.setHeader('Access-Control-Allow-Method', 'POST、GET、DELETE、HEAD')   '*' 允许所有来源
+
+    简单请求：
+    1.get、post、head 三者之一
+    2.http头部信息不超过以下几种字段：无自定义头部字段、Accept、Accept-Language、Content-Language、DPR、Downlink、Save-Data、Viewport-Width、Width
+    、Content-Type（包含text/plain、multipart/form-data、application/x-www-form-urlencoded）
+
+    预检请求：（满足一下任意条件，都需要进行预检请求）
+    1. 请求方式为get、post、head 三者之外的请求方式
+    2. 请求中包含自定义头部字段
+    3. 向服务器发送了 application/json格式的数据 
+    注：浏览器与服务器通信前，通过 option 请求进行预检。服务器允许请求并响应后，才会进行真正的请求；option请求即为 预检请求
+
+    以上两者差别：简单请求--》一次请求   预检请求--》两次请求。预检通过再请求
+
+    
   b. jsonp (有缺陷：只支持get请求)
+    注意事项：若项目已配置cors跨域，为防止冲突，需在cors中间件声明之前 声明jsonp的接口， 否则接口会被处理成开启cors接口
